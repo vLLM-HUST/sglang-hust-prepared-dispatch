@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sglang-hust-prepared-dispatch"
+version = "0.1.0"
+description = "TraceLoom-guided opt-in prepared typed FIA graph-update dispatch for SGLang on Ascend"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+
+[project.optional-dependencies]
+test = ["pytest>=8", "build"]
+
+[project.scripts]
+traceloom-prepared-dispatch = "traceloom_prepared_dispatch.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+traceloom_prepared_dispatch = ["*.cpp", "*.json", "*.source"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

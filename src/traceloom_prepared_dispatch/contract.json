@@ -1,0 +1,15 @@
+{
+  "torch": "2.10.0+cpu",
+  "torch_npu": "2.10.0.post6",
+  "npu_git_version": "38e483ee79ec8a3286517808740a811c0f0ae66c",
+  "source_sha256": "c1baa3db99667ddc1aac83bdb228843ff00ed58617681c3b5f074778bc476b8b",
+  "schema": "npu::npu_fused_infer_attention_score.out(Tensor query, Tensor key, Tensor value, *, Tensor? pse_shift=None, Tensor? atten_mask=None, SymInt[]? actual_seq_lengths=None, SymInt[]? actual_seq_lengths_kv=None, Tensor? dequant_scale1=None, Tensor? quant_scale1=None, Tensor? dequant_scale2=None, Tensor? quant_scale2=None, Tensor? quant_offset2=None, Tensor? antiquant_scale=None, Tensor? antiquant_offset=None, Tensor? key_antiquant_scale=None, Tensor? key_antiquant_offset=None, Tensor? value_antiquant_scale=None, Tensor? value_antiquant_offset=None, Tensor? block_table=None, Tensor? query_padding_size=None, Tensor? kv_padding_size=None, Tensor? key_shared_prefix=None, Tensor? value_shared_prefix=None, SymInt[]? actual_shared_prefix_len=None, Tensor? query_rope=None, Tensor? key_rope=None, Tensor? key_rope_antiquant_scale=None, int num_heads=1, float scale=1., int pre_tokens=2147483647, int next_tokens=2147483647, str input_layout=\"BSH\", int num_key_value_heads=0, int sparse_mode=0, int inner_precise=0, int block_size=0, int antiquant_mode=0, int key_antiquant_mode=0, int value_antiquant_mode=0, bool softmax_lse_flag=False, Tensor? workspace=None, Tensor[] out) -> (Tensor, Tensor)",
+  "sglang_commit": "297e54fd105e974cdf401e5b4d20253a22c16f90",
+  "sglang_version": "0.5.23",
+  "backend_path": "python/sglang/srt/hardware_backend/npu/graph_runner/npu_cudagraph_backend.py",
+  "utils_path": "python/sglang/srt/managers/utils.py",
+  "backend_sha256": "157a61b9dd8ea8a2214dae08696b85c037d6d24dbf3c198adacff583b398865d",
+  "original_utils_sha256": "92d769c6aa566282f01704a709fe47b880ea286fdcb14d1ad2625920d083c32e",
+  "batch_copy_utils_sha256": "7f378649fbcce1d59a1a3143546efe64df670c36102953309acfce1174c1f7b7",
+  "record_count": 28
+}

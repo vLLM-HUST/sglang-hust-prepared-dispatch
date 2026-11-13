@@ -1,0 +1,50 @@
+{
+  "schema_version": "vllm-hust-mod-metadata-v1",
+  "mod_id": "org.vllm-hust.sglang-prepared-dispatch",
+  "repository": "sglang-hust-prepared-dispatch",
+  "display_name": "SGLang Prepared Dispatch",
+  "canonical_repository": "https://github.com/vLLM-HUST/sglang-hust-prepared-dispatch",
+  "responsibility": {
+    "organization": "vLLM-HUST",
+    "maintainers": [
+      {
+        "name": "Shuhao Zhang",
+        "github": "ShuhaoZhangTony"
+      }
+    ],
+    "advisor_status": "unknown",
+    "advisors": []
+  },
+  "lifecycle": {
+    "status": "experimental",
+    "default_enabled": false,
+    "activation_contract": "Explicit guarded source mount plus TRACELOOM_PREPARED_DISPATCH_ENABLE=1 in every worker",
+    "rollback_contract": "Stop the engine; guarded unmount restores original source bytes; unset activation variables"
+  },
+  "scope": {
+    "mechanism": "Prepare immutable FIA parameters per graph record and use the registered typed C++ dispatcher with live KV lengths",
+    "supported_workloads": [
+      "SGLang 0.5.23 commit 297e54f; Qwen3-0.6B BF16, TP1, 910B2/CANN9.1, TorchNPU 2.10.0.post6"
+    ],
+    "out_of_scope": [
+      "CUDA",
+      "other operator schemas",
+      "speculative multi-step updates",
+      "new CANN executors or streams",
+      "automatic vLLM Extension Manager activation"
+    ]
+  },
+  "evidence": {
+    "qualification": "historical device-qualified core; packaged adapter CPU contract checks",
+    "latest_result": "evidence/result.json",
+    "index": "docs/EVIDENCE.md",
+    "performance_claims": [
+      {
+        "label": "historical workload-qualified device measurement",
+        "result": "evidence/result.json",
+        "protocol": "evidence/protocol.json",
+        "scope": "docs/EVIDENCE.md"
+      }
+    ]
+  }
+}
